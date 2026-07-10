@@ -1,0 +1,1 @@
+(async()=>{try{const r=await fetch('game.js.gz');if(!r.ok)throw new Error('HTTP '+r.status);const stream=r.body.pipeThrough(new DecompressionStream('gzip'));const code=await new Response(stream).text();(0,eval)(code);}catch(e){console.error(e);document.getElementById('loadingText').textContent='Erreur de chargement';}})();
